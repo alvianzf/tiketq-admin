@@ -35,7 +35,7 @@ const Login = () => {
 
       console.log({ response: loginResult })
 
-      if (!loginResult?.token) {
+      if ((!loginResult?.token && username) || (loginResult?.token && password)) {
         toast.error('Username atau password salah!')
       }
     } catch (err) {
