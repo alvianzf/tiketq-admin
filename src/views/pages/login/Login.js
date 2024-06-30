@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import logo from '../../../assets/images/favicon.png'
+import { useNavigate } from 'react-router-dom'
 import {
   CButton,
   CCard,
@@ -25,6 +26,7 @@ const Login = () => {
   const { login } = useContext(AuthContext)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const navigate = useNavigate()
 
   const handleLogin = async (e) => {
     e.preventDefault()
@@ -35,8 +37,10 @@ const Login = () => {
 
       console.log({ response: loginResult })
 
-      if ((!loginResult?.token && username) || (loginResult?.token && password)) {
+      if ((!loginResult.token && username) || (!loginResult.token && password)) {
         toast.error('Username atau password salah!')
+      } else {
+        navigate('/dashboard')
       }
     } catch (err) {
       toast.error(err.response.data.message)
