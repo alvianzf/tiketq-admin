@@ -24,6 +24,7 @@ const BASE_URL = import.meta.env.VITE_BASE_URL
 
 const Login = () => {
   const { login } = useContext(AuthContext)
+  const { isAuthenticated } = useContext(AuthContext)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
@@ -49,7 +50,10 @@ const Login = () => {
 
   useEffect(() => {
     document.title = 'Login Page'
-    console.log('BASE_URL:', BASE_URL) // Debugging BASE_URL
+
+    if (isAuthenticated) {
+      navigate('/dashboard')
+    }
   }, [])
 
   return (
