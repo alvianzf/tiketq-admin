@@ -2,6 +2,8 @@ import React, { useEffect, useContext } from 'react'
 import classNames from 'classnames'
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/Auth/AuthContext'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import {
   CAvatar,
@@ -58,7 +60,7 @@ import MainChart from './MainChart'
 
 const Dashboard = () => {
   const navigate = useNavigate()
-  const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated } = useContext(AuthContext)
 
   const progressExample = [
     { title: 'Visits', value: '29.703 Users', percent: 40, color: 'success' },
