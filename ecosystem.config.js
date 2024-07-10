@@ -2,9 +2,10 @@ module.exports = {
   apps: [
     {
       name: 'admin',
-      script: 'npx',
-      args: 'vite',
+      script: 'node_modules/vite/bin/vite.js',
+      args: 'serve',
       instances: 1,
+      exec_mode: 'fork',
       autorestart: true,
       watch: false,
       max_memory_restart: '1G',
