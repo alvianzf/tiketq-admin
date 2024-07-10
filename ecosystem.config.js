@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'admin',
-      script: 'node_modules/.bin/vite',
+      script: './start-vite.sh',
       args: 'serve',
       instances: 1,
       exec_mode: 'fork',
