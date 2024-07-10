@@ -26,3 +26,6 @@ yarn-error.log*
 
 # Environment files
 .env
+
+# redis dump
+dump.rdb
