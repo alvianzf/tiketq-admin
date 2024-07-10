@@ -11,10 +11,11 @@ module.exports = {
       max_memory_restart: '1G',
       env: {
         NODE_ENV: 'development',
+        VITE_PORT: 3030,
       },
       env_production: {
         NODE_ENV: 'production',
-        VITE_POSRT: 3030,
+        VITE_PORT: 3030,
       },
     },
   ],
