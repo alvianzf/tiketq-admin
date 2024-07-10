@@ -2,7 +2,8 @@ module.exports = {
   apps: [
     {
       name: 'admin',
-      script: './src/App.js',
+      script: 'npx',
+      args: 'vite',
       instances: 1,
       autorestart: true,
       watch: false,
@@ -12,6 +13,7 @@ module.exports = {
       },
       env_production: {
         NODE_ENV: 'production',
+        args: 'vite --port 3030',
       },
     },
   ],
