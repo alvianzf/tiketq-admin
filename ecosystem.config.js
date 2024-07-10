@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'admin',
-      script: 'node_modules/vite/bin/vite.js',
+      script: 'node_modules/.bin/vite',
       args: 'serve',
       instances: 1,
       exec_mode: 'fork',
@@ -14,7 +14,7 @@ module.exports = {
       },
       env_production: {
         NODE_ENV: 'production',
-        args: 'vite --port 3030',
+        VITE_POSRT: 3030,
       },
     },
   ],
