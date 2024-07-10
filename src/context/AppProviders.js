@@ -1,9 +1,19 @@
 /* eslint-disable react/prop-types */
-import React from 'react'
-import { AuthProvider } from './Auth/AuthProvider'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { AuthProvider } from './Auth/AuthProvider';
+import { BookingProvider } from './Booking/BookingProvider';
 
 const AppProviders = ({ children }) => {
-  return <AuthProvider>{children}</AuthProvider>
-}
+  return (
+    <AuthProvider>
+      <BookingProvider>{children}</BookingProvider>
+    </AuthProvider>
+  );
+};
 
-export default AppProviders
+AppProviders.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default AppProviders;
